@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TicTacToe</title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script src="http://localhost:8866/socket.io/socket.io.js"></script>
+    <script src="/js/game.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/3T.png">
+    <link rel="stylesheet" type="text/css" href="style.css"></style>
+  </head>
+
+  <body>
+  <div id="container">
+
+    <!-- Chat (Right Side)-->
+      <div id="bg_scroller">
+        <div id="conversation"></div>
+      </div>
+
+    <input id="data" placeholder="Writte a message..." />
+    <input type="button" id="datasend" value="send" style="display: none;"/>
+
+    <!-- Game (Left Side)-->
+    <div id="board">
+    	
+      <!-- Welcome page-->
+    	 <div id="welcome" class="welcome">	
+    		<h1> Let's play a game of tic-tac-toe!</h1>
+    		<p>Connect yourself, choose your room and wait for your friends!<br/><br/>
+          And then just have fun :)</p>
+          <div id="stats">Currently there are <b><span id="players"></span> </b> players connected.</div><br/>
+          <div id="error">&nbsp;</div>
+          <input type="text" id="nickname" placeholder="Chose your nickname..."/>
+          <input type="button" value="Join the game" id="join" />
+        </div>
+
+        <!-- Rooms Page -->
+      <div id="rooms">
+          <div class="header">
+            <h1>Game Rooms</h1>
+            <p>Choose the room you want to join!</br></br>
+              A little reminder: tic-tac-toe is a two player game, so if the room is full, you will join as a spectator.</p>
+          </div>
+          <br/>
+          <!-- Game rooms are added based on the server by using jquery -->
+          <div id="roomcards"></div>
+      </div>
+
+      <!-- Game Room -->
+      <div id="game">
+          <div class="header">
+            <div class="exit" id="exit" title="Return to Lobby"></div>
+          </div>
+          <h1 id="salon"></h1>
+          <table class="gameinfo">
+            <tr>
+              <td id="state">Waiting for an opponent...</td>
+              <td id="gameinfo">&nbsp;</td>
+              <td id="gamestate">&nbsp;</td>
+            </tr>
+          </table>
+          
+
+          <!-- Game board refresh with jquery-->
+          <div id='gameboard'></div>
+      </div>
+
+      <!-- Notifications -->
+      <div id="gameended">
+          <span id="matchdetails"></span>
+          <h1 id="conclusion"></h1>
+          <h2></h2>
+          <div id="finalgameboard"></div>
+          <h2></h2>
+          <span>A new game can be launched in <span id="countdown">5</span></span>
+      </div>
+
+    </div>
+
+  </div>
+  </body>   
+</html>
