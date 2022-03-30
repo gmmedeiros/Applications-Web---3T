@@ -4,7 +4,7 @@ Project consists of a multiplayer tic-tac-toe game using JavaScript, HTML, CSS a
 
 # INSTRUCTIONS
 run command prompt on the project folder
-run "npm install socket.io express"
+run "npm install socket.io"
 run "node server.js"
 open "localhost:8866" on your browser
 enjoy!
